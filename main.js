@@ -34,7 +34,19 @@ const seeDetails = (characterUrl) => {
           <p>${character.species}</p>
           <p>${character.location.name}</p>
           <p>${character.origin.name}</p>
-          <button onclick="getCharacters()">Volver</button>
+          <button onclick="BackToHome()">Volver</button>
         </div>`;
     });
 };
+
+// Pruebo agregar esto para volver
+const BackToHome = () => {
+  window.history.back();
+  location.reload();
+};
+
+// Evento página anterior y siguiente     -- Prueba
+
+// Evento Primera y última página   --- Prueba
+
+// Evento filtrar personajes
