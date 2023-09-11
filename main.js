@@ -1,11 +1,17 @@
 const container = document.getElementById("container");
-const getCharacters = () => {
-  fetch("https://rickandmortyapi.com/api/character")
+let currentPage = 1;
+let totalPages = 0;
+const getCharacters = (pageNumber) => {
+  container.innerHTML = "";
+  fetch(`https://rickandmortyapi.com/api/character?page=${pageNumber}`)
     .then((res) => res.json())
-    .then((data) => renderCharacters(data));
+    .then((data) => {
+      renderCharacters(data);
+      totalPages = data.info.pages;
+    });
 };
 
-getCharacters();
+// getCharacters();
 
 const renderCharacters = (data) => {
   data.results.forEach((character) => {
@@ -45,7 +51,36 @@ const BackToHome = () => {
   location.reload();
 };
 
-// Evento página anterior y siguiente     -- Prueba
+getCharacters(currentPage);
+
+// Evento página siguiente     -- Prueba
+const nextBtn = document.getElementById("nextButton");
+const previousBtn = document.getElementById("previousButton");
+nextBtn.addEventListener("click", () => {
+  if (currentPage <= 1) {
+    currentPage++;
+  } else if (currentPage > 1 && currentPage < totalPages) {
+    previousBtn.removeAttribute("disabled", false);
+    currentPage++;
+  } else {
+    nextBtn.setAttribute("disabled", true);
+  }
+  getCharacters(currentPage);
+});
+
+// Evento página anterior    -- Prueba
+previousBtnBtn.addEventListener("click", () => {
+  if (currentPage <= 1) {
+    previousBtn.setAttribute("disabled", true);
+  } else if (currentPage > 1 && currentPage <= totalPages) {
+    currentPage--;
+    nextBtn.removeAttribute("disabled", true);
+  } else {
+    nextBtn.setAttribute("disabled", true);
+    currentPage--;
+  }
+  getCharacters(currentPage);
+});
 
 // Evento Primera y última página   --- Prueba
 
