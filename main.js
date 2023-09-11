@@ -1,6 +1,13 @@
 const container = document.getElementById("container");
 let currentPage = 1;
 let totalPages = 0;
+
+// Evento filtrar personajes
+const allBtn = document.getElementById("all");
+const femaleBtn = document.getElementById("Female");
+const maleBtn = document.getElementById("Male");
+const unknownBtn = document.getElementById("unknown");
+
 const getCharacters = (pageNumber) => {
   container.innerHTML = "";
   fetch(`https://rickandmortyapi.com/api/character?page=${pageNumber}`)
@@ -25,7 +32,6 @@ const renderCharacters = (data) => {
 };
 
 // Ver detalles de cada uno
-// Al presionar Volver me deja la card-detail y me suma la ppágina completa duplicando a Ricky
 const seeDetails = (characterUrl) => {
   container.innerHTML = "";
   fetch(characterUrl)
@@ -53,7 +59,7 @@ const BackToHome = () => {
 
 getCharacters(currentPage);
 
-// Evento página siguiente     -- Prueba
+// Evento página siguiente
 const nextBtn = document.getElementById("nextButton");
 const previousBtn = document.getElementById("previousButton");
 nextBtn.addEventListener("click", () => {
@@ -68,8 +74,8 @@ nextBtn.addEventListener("click", () => {
   getCharacters(currentPage);
 });
 
-// Evento página anterior    -- Prueba
-previousBtnBtn.addEventListener("click", () => {
+// Evento página anterior
+previousBtn.addEventListener("click", () => {
   if (currentPage <= 1) {
     previousBtn.setAttribute("disabled", true);
   } else if (currentPage > 1 && currentPage <= totalPages) {
@@ -82,6 +88,14 @@ previousBtnBtn.addEventListener("click", () => {
   getCharacters(currentPage);
 });
 
-// Evento Primera y última página   --- Prueba
-
-// Evento filtrar personajes
+// Evento Primera y última página   --- Hacer disabled
+const firstButton = document.getElementById("firstBtn");
+const lastButton = document.getElementById("lastBtn");
+firstButton.addEventListener("click", () => {
+  currentPage = 1;
+  getCharacters(currentPage);
+});
+lastButton.addEventListener("click", () => {
+  currentPage = totalPages;
+  getCharacters(currentPage);
+});
