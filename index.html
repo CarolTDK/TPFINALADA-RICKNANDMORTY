@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FONT -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500;700&family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
       rel="stylesheet"
     />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <title>Clases JS</title>
+    <title>Rick and Morty</title>
   </head>
 
   <body>
@@ -21,13 +21,25 @@
     </header>
 
     <main>
+      <h1>Rick and Morty</h1>
+      <hr />
       <h2>Personajes</h2>
       <div class="filtro" id="all"><a href="">Todos</a></div>
       <div class="filtro" id="Female"><a href="">Mujeres</a></div>
       <div class="filtro" id="Male"><a href="">Hombres</a></div>
       <div class="filtro" id="unknown"><a href="">Desconocidos</a></div>
 
-      <div class="container" id="container"></div>
+      <div class="container" id="container">
+        <div class="card">
+          <h4>Character Name</h4>
+          <img src="imgs/example1.jpg" alt="" />
+          <div class="card-description">
+            <h2>Rick and Morty</h2>
+            <p>GEnder: Male</p>
+          </div>
+          <button class="button">Ver detalles</button>
+        </div>
+      </div>
       <br />
       <div class="page">
         <button class="first" id="firstBtn">Primera</button>
