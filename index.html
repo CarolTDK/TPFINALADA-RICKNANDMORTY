@@ -23,12 +23,13 @@
     <main>
       <h1>Rick and Morty</h1>
       <hr />
-      <h2>Personajes</h2>
-      <div class="filtro" id="all"><a href="">Todos</a></div>
-      <div class="filtro" id="Female"><a href="">Mujeres</a></div>
-      <div class="filtro" id="Male"><a href="">Hombres</a></div>
-      <div class="filtro" id="unknown"><a href="">Desconocidos</a></div>
-
+      <div class="filter">
+        <h2>Personajes</h2>
+        <button class="all" id="all">Todos</button>
+        <button class="female" id="female">Mujeres</button>
+        <button class="male" id="male">Hombres</button>
+        <button class="unknown" id="unknown">Desconocidos</button>
+      </div>
       <div class="container" id="container">
         <div class="card">
           <h4>Character Name</h4>
@@ -40,6 +41,20 @@
           <button class="button">Ver detalles</button>
         </div>
       </div>
+
+      <!-- <div class="card-detail">
+        <img src="${character.image}" alt="" />
+        <div class="card-info">
+          <h3>Nombre</h3>
+          <p>Género</p>
+          <p>Estado</p>
+          <p>Especie</p>
+          <p>Ubicación</p>
+          <p>Origen</p>
+          <button>Volver</button>
+        </div>
+      </div> -->
+
       <br />
       <div class="page">
         <button class="first" id="firstBtn">Primera</button>

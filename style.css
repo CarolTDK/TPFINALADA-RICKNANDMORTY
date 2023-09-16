@@ -66,6 +66,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  object-fit: contain;
 }
 
 .card img {
@@ -98,6 +99,50 @@ h4 {
   margin-top: 2rem;
 }
 
+.card-detail {
+  width: 50rem;
+  height: 30rem;
+  border: solid 3px greenyellow;
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  object-fit: contain;
+  font-size: 1.5rem;
+  color: blueviolet;
+  background-color: rgb(24, 24, 34);
+}
+
+.card-detail img {
+  width: 50%;
+  height: 100%;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin: 1.5rem;
+}
+
+.card-info h3 {
+  font-size: 3rem;
+  margin: 2.5rem;
+}
+
+.card-info button {
+  background-color: rgb(8, 202, 8);
+  color: black;
+  border-radius: 10%;
+  border: rgb(226, 241, 15) solid 2px;
+  font-size: 1rem;
+  padding: 5px;
+  margin: 3rem;
+  font-size: 2rem;
+}
 .button {
   background-color: pink;
   color: black;
