@@ -4,6 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="imgs/icono10.ico" type="image/x-icon" />
     <!-- FONT -->
     <link
       href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
@@ -17,19 +27,25 @@
 
   <body>
     <header>
-      <h1>Proyecto Final Integrador Ada</h1>
+      <!-- <h1>Proyecto Final Integrador Ada</h1> -->
     </header>
 
     <main>
       <h1>Rick and Morty</h1>
       <hr />
-      <div class="filter">
+
+      <div class="titles">
         <h2>Personajes</h2>
-        <button class="all" id="all">Todos</button>
-        <button class="female" id="female">Mujeres</button>
-        <button class="male" id="male">Hombres</button>
-        <button class="unknown" id="unknown">Desconocidos</button>
       </div>
+      <div class="gender">
+        <div class="gender-list">
+          <button class="all" id="all">Todos</button>
+          <button class="female" id="female">Mujeres</button>
+          <button class="male" id="male">Hombres</button>
+          <button class="unknown" id="unknown">Desconocidos</button>
+        </div>
+      </div>
+
       <div class="container" id="container">
         <div class="card">
           <h4>Character Name</h4>
@@ -57,10 +73,24 @@
 
       <br />
       <div class="page">
-        <button class="first" id="firstBtn">Primera</button>
-        <button class="previous" id="previousButton">Página Anterior</button>
-        <button class="next" id="nextButton">Siguiente Página</button>
-        <button class="last" id="lastBtn">Última</button>
+        <button class="first" id="firstBtn">
+          <i
+            class="fa-solid fa-angles-right fa-rotate-180"
+            style="color: #f7f7f8"
+          ></i>
+        </button>
+        <button class="previous" id="previousButton">
+          <i
+            class="fa-solid fa-chevron-right fa-rotate-180"
+            style="color: #f9fafa"
+          ></i>
+        </button>
+        <button class="next" id="nextButton">
+          <i class="fa-solid fa-chevron-right" style="color: #f9fafa"></i>
+        </button>
+        <button class="last" id="lastBtn">
+          <i class="fa-solid fa-angles-right" style="color: #f7f7f8"></i>
+        </button>
       </div>
     </main>
 
